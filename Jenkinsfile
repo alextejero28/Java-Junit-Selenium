@@ -1,10 +1,11 @@
 node {
-    def mvnHome = tool 'Maven'
+    def mvnHome 
     
     // Mark the code checkout 'stage'....
     stage 'Checkout'
     // Get some code from a GitHub repository
     git url: 'https://github.com/saucelabs-sample-test-frameworks/Java-Junit-Selenium.git'
+    mvnHome = tool 'Maven'
     stage 'Compile'
     bat "${mvnHome}/bin/mvn compile"
     stage 'Test'
