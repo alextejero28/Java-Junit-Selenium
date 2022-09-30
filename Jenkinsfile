@@ -5,7 +5,7 @@ node {
     stage 'Checkout'
     // Get some code from a GitHub repository
     git url: 'https://github.com/saucelabs-sample-test-frameworks/Java-Junit-Selenium.git'
-    mvnHome = tool 'Maven'
+    mvnHome = tool 'M3'
     stage 'Compile'
     bat "${mvnHome}/bin/mvn compile"
     stage 'Test'
