@@ -7,11 +7,11 @@ node {
     git url: 'https://github.com/saucelabs-sample-test-frameworks/Java-Junit-Selenium.git'
     mvnHome = tool 'M3'
     stage 'Compile'
-    bat "%mvnHome%/bin/mvn compile"
+    bat "${mvnHome}/bin/mvn compile"
     stage 'Test'
     sauce('saucelabs') {
         sauceconnect(useGeneratedTunnelIdentifier: true, verboseLogging: true) {
-            bat "%mvnHome%/bin/mvn test"
+            bat "${mvnHome}/bin/mvn test"
         }
     }
     stage 'Collect Results'
