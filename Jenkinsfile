@@ -9,11 +9,11 @@ node {
     stage 'Compile'
     bat "${mvnHome}/bin/mvn compile"
     stage 'Test'
-    /*sauce('saucelabs') {
+    sauce('saucelabs') {
         sauceconnect(useGeneratedTunnelIdentifier: true, verboseLogging: true) {
             bat "${mvnHome}/bin/mvn test"
         }
-    }*/
+    }
     stage 'Collect Results'
     step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
     step([$class: 'SauceOnDemandTestPublisher'])
