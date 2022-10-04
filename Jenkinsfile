@@ -11,7 +11,7 @@ node {
     stage 'Test'
     sauce('saucelabs') {
         sauceconnect(useGeneratedTunnelIdentifier: true, verboseLogging: true) {
-            bat "${mvnHome}/bin/mvn test"
+            bat "%mvnHome%/bin/mvn test"
         }
     }
     stage 'Collect Results'
