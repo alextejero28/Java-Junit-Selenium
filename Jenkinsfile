@@ -11,6 +11,7 @@ node {
     stage 'Test'
     sauce('sauce-labs') {
         sauceconnect(useGeneratedTunnelIdentifier: true, verboseLogging: true) {
+            SauceOnDemandSessionID=sauce-labs job-name=Java-Junit-Selenium
             bat "${mvnHome}/bin/mvn test"
         }
     }
