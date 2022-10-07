@@ -9,7 +9,7 @@ node {
     stage 'Compile'
     bat "${mvnHome}/bin/mvn compile"
     stage 'Test'
-    sauce('saucelabs') {
+    sauce('sauce-labs') {
         sauceconnect(useGeneratedTunnelIdentifier: true, verboseLogging: true) {
             bat "${mvnHome}/bin/mvn test"
         }
