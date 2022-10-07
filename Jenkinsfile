@@ -22,7 +22,4 @@ post {
     always {
         junit '**/surefire-reports/*.xml'
     }
-    failure {
-        mail to: team@example.com, subject: 'The Pipeline failed'
-    }
 }
