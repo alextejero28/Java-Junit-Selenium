@@ -18,3 +18,11 @@ node {
     step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
     step([$class: 'SauceOnDemandTestPublisher'])
 }
+post {
+    always {
+        junit '**/surefire-reports/*.xml'
+    }
+    failure {
+        mail to: team@example.com, subject: 'The Pipeline failed :('
+    }
+}
